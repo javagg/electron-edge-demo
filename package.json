@@ -1,0 +1,12 @@
+{
+  "name": "eed",
+  "version": "0.0.1",
+  "main": "main.js",
+  "devDependencies": {
+    "electron-rebuild": "^0.2.2"
+  },
+  "dependencies": {
+    "edge": "^0.10.1",
+    "electron-prebuilt": "^0.28.3"
+  }
+}

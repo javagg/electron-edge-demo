@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello EEOD!</title>
+  </head>
+  <body>
+    <h1>Hello EEOD!</h1>
+    We are using node.js/io.js <script>document.write(process.version)</script>
+    and Electron <script>document.write(process.versions['electron'])</script>.
+    <p id="content"></p>
+  </body>
+  <script>
+    var path = require('path')    
+    var edge = require('edge');
+    var sayHello = edge.func({
+      assemblyFile: path.join(__dirname, 'SimpleLibrary.dll'),
+      typeName: 'SimpleLibrary.HelloWorld',
+      methodName: 'SayHello'
+    });
+
+	sayHello("Electron", function (error, result) {
+      if (error) throw error;	
+      document.getElementById("content").innerHTML = result;
+    });
+  </script>	
+</html>
